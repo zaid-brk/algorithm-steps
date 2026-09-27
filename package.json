@@ -1,0 +1,13 @@
+{
+  "name": "algorithm-steps",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A visual algorithm tutor with interactive Python walkthroughs.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

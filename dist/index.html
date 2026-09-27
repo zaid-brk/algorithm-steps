@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2c">
+  <meta name="description" content="Step through beginner-friendly Python solutions for your own LeetCode problem or a built-in example.">
+  <title>Algorithm Steps — visual LeetCode tutor</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23101b2c'/%3E%3Cpath d='M18 22h27M18 32h18M18 42h27' stroke='%237ee3c2' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='32' r='5' fill='%23ffcb7d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">{ }</span><span>Algorithm Steps</span></div><span class="private-label">Your visual practice space</span></header>
+    <main>
+      <div class="intro"><div><p class="eyebrow">LEETCODE · STEP BY STEP</p><h1>See the algorithm move.</h1><p>Paste a problem or pick a built-in example, then follow each change in the code and data.</p></div><span class="kbd-hint">Tip: use ← and → to step</span></div>
+      <nav class="problem-tabs" aria-label="Choose a problem" id="problem-tabs"></nav>
+      <div class="workspace">
+        <section class="left-column" aria-label="Example and visualization">
+          <div class="card setup-card">
+            <div class="section-head"><h2>Example</h2><span id="input-label" class="muted"></span></div>
+            <div id="standard-controls">
+              <div class="preset-row" id="presets" aria-label="Example presets"></div>
+              <label for="example-input" class="field-label">Your input <span class="muted">(JSON)</span></label>
+              <textarea id="example-input" spellcheck="false" rows="3"></textarea>
+              <div class="input-bottom"><span id="input-hint" class="muted"></span><button type="button" class="run-button" id="run-button">Run this example</button></div>
+              <p id="input-error" class="input-error" role="alert" hidden></p>
+            </div>
+            <div id="custom-controls" hidden>
+              <label for="problem-input" class="field-label">Problem statement or title</label>
+              <textarea id="problem-input" rows="7" maxlength="6000" placeholder="Paste the problem, including its rules and constraints. A title works too, but the full statement is more reliable."></textarea>
+              <label for="custom-example" class="field-label custom-example-label">Small example <span class="muted">(optional)</span></label>
+              <textarea id="custom-example" rows="2" maxlength="1000" placeholder="For example: nums = [2,7,11,15], target = 9. Or leave blank to use an example from the statement."></textarea>
+              <div class="input-bottom"><span class="muted">A short example makes the steps easier to follow.</span><button type="button" class="run-button" id="generate-button">Generate walkthrough</button></div>
+              <p class="note">Generated solutions can make mistakes. Compare the final answer with the problem's sample output.</p>
+              <p id="custom-error" class="input-error" role="alert" hidden></p>
+            </div>
+          </div>
+          <div class="card visual-card"><div class="section-head"><h2 id="visual-title">Visual walkthrough</h2><span class="legend"><i></i>Current item</span></div><div id="visual" class="visual" aria-live="polite"></div></div>
+          <div class="card state-card"><div class="section-head"><h2>What the variables hold</h2><span class="muted" id="state-tag"></span></div><div id="variables" class="variable-grid"></div></div>
+        </section>
+        <section class="right-column" aria-label="Python code and explanation">
+          <div class="card plan-card" id="plan-card" hidden><div class="section-head"><h2>Before the code</h2><span class="muted">simple plan</span></div><div class="plan-item"><strong>Brainstorming</strong><p id="plan-brainstorming"></p></div><div class="plan-item"><strong>Idea</strong><p id="plan-idea"></p></div><div class="plan-item"><strong>Pseudocode-ish solution</strong><p id="plan-pseudocode"></p></div></div>
+          <div class="card code-card"><div class="section-head"><h2>Python</h2><span class="language-tag">simple version</span></div><div id="code" class="code-list" aria-label="Algorithm code"></div></div>
+          <div class="card explanation-card"><div class="explanation-heading"><span class="step-dot" id="step-dot">0</span><div><p class="eyebrow">CURRENT STEP</p><h2 id="step-title"></h2></div></div><p id="step-body"></p><div class="step-controls"><button type="button" id="prev-button" class="secondary">← Previous</button><span id="step-count" aria-live="polite"></span><button type="button" id="next-button" class="primary">Next →</button></div><input id="step-range" type="range" min="0" max="0" value="0" aria-label="Go to step"><p class="range-hint">Drag to revisit any step.</p></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
